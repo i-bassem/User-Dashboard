@@ -1,0 +1,17 @@
+/* Importing Bootstrap CSS*/
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+
+.active{
+    background-color: red;
+}
+html, body {
+    height: 100%; 
+}
+body {
+     margin: 0; 
+     font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.redborder{
+    border:  2px solid red;
+}

@@ -1,0 +1,37 @@
+<!-- paginator -->
+<nav aria-label="Page navigation" class="my-3">
+  <ul class="pagination justify-content-center">
+    <!-- Previous Button -->
+    <li class="page-item" [ngClass]="{'disabled': currentPage === 1}">
+      <button class="page-link" (click)="changePage(currentPage - 1)">Previous</button>
+    </li>
+
+    <!-- Pagination Buttons -->
+    <ng-container *ngIf="totalPages <= 5">
+      <ng-container *ngFor="let page of pageArr">
+        <li class="page-item" [ngClass]="{'active': page === currentPage}">
+          <button class="page-link" (click)="changePage(page)">{{ page }}</button>
+        </li>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="totalPages > 5">
+      <ng-container *ngFor="let page of getVisiblePages()">
+        <li class="page-item" [ngClass]="{'active': page === currentPage}">
+          <button class="page-link" (click)="changePage(page)">{{ page }}</button>
+        </li>
+      </ng-container>
+      <li class="page-item disabled" *ngIf="shouldShowEllipsis()">
+        <button class="page-link">...</button>
+      </li>
+      <li class="page-item" *ngIf="totalPages > 1">
+        <button class="page-link" (click)="changePage(totalPages)">{{ totalPages }}</button>
+      </li>
+    </ng-container>
+
+    <!-- Next Button -->
+    <li class="page-item" [ngClass]="{'disabled': currentPage === totalPages}">
+      <button class="page-link" (click)="changePage(currentPage + 1)">Next</button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,22 @@
+
+
+
+<!-- routerLink="/User" -->
+<button class="btn btn-primary" (click)="goBack()" >
+  <i class="fas fa-arrow-left"></i> Back
+</button>
+
+<div class="card mx-auto" *ngIf="user;else notFound" style="width: 17rem;">
+  <img [src]="user.avatar" class="card-img-top" alt="{{user.first_name}} Image">
+    <div class="card-body">
+      <h2 class="card-title">{{ user.first_name }} {{ user.last_name }}</h2>
+      <p class="card-text">
+        Email: <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+      </p>
+    </div>
+</div>
+
+
+<ng-template #notFound>
+  <p class="text-center h3">User Not Found!</p>
+</ng-template>

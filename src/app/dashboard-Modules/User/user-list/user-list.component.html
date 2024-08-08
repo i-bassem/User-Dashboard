@@ -1,0 +1,31 @@
+
+
+<h1> User Dashboard </h1>
+
+<div class="user-list w-50 mx-auto">
+
+  <ng-container *ngIf="userList.length>0;else notFound">
+
+    <div *ngFor="let user of userList" class="userRow" (click)="selectUser(user.id)">
+      <div class="user-card">
+        <div class="user-avatar">
+          <img [src]="user.avatar" alt="User Avatar">
+        </div>
+        <div class="user-details">
+          <h2>{{ user.first_name}} {{  user.last_name}}</h2>
+          <p><strong>ID:</strong> {{ user.id }}</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <ng-container *ngIf="userList.length>1">
+    <app-paginator  [totalPages]="totalPages" [pageArr]="pageArr" (userList)="ngOnChanges($event)" ></app-paginator>
+  </ng-container>
+
+  </ng-container>
+</div>
+
+<ng-template #notFound>
+  <p>User Not Found!</p>
+</ng-template>
