@@ -3,7 +3,9 @@ h1{
     font-weight: 600;
     text-align: center;
 }
-
+.user-list{
+  width: 50%;
+}
 .user-card {
     display: flex;
     align-items: center;
@@ -42,12 +44,15 @@ h1{
 
   @media screen and (max-width: 768px) {
     h2{
-        font-weight: 400;
+        font-weight: 600;
     }
     .user-details h2 {
         font-size: 1rem;
         margin-bottom: 7px;
-      }
+    }
+    .user-list{
+       width: 80%;
+    }
     .user-card{
         padding: 10px;
         border-radius: 4px;

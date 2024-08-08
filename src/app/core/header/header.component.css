@@ -13,12 +13,21 @@
 
 .search-icon {
   position: absolute;
-  left: 10px; /* Adjust as needed */
-  font-size: 16px; /* Adjust size as needed */
-  color: #6c757d; /* Adjust color as needed */
+  left: 10px; 
+  font-size: 16px; 
+  color: #6c757d; 
 }
 
 .search-container input {
-  padding-left: 40px; /* Ensure there's enough space for the icon */
+  padding-left: 40px; 
 }
 
+/* Ensure the search bar is centered when the navbar is collapsed */
+@media screen and (max-width: 992px) {
+ 
+  .search-container {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto ;
+  }
+}
