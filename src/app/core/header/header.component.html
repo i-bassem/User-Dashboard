@@ -37,7 +37,7 @@
         </ul>
         <!-- Search -->
         <form class="d-flex  ms-auto my-auto">
-          <div class="search-container">
+          <div class="search-container"  [class.active]="isActive">
             <i class="fas fa-search search-icon"></i>
             <input class="form-control"  name="search" 
             type="number"
@@ -45,7 +45,10 @@
             autocomplete="off" 
             aria-label="Search"
             (keyup)="search()"
-            placeholder="Search by User ID">
+            placeholder="Search by User ID"
+            (focus)="activateSearch()"
+            (blur)="deactivateSearch()"
+            >
           </div>
         </form>
       </div>

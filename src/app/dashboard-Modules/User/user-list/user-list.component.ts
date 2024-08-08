@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/_models/User';
 import { UserService } from 'src/app/_services/User/user.service';
@@ -23,6 +23,7 @@ export class UserListComponent {
   this.pageArr=[];
   this.userList=[];
  }
+
 
   ngOnInit(): void {
 

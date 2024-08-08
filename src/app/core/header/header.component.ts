@@ -11,10 +11,18 @@ import { UserService } from 'src/app/_services/User/user.service';
 })
 export class HeaderComponent {
    
-
+  isActive = false;
   public searchInput!:number; 
 
   constructor(private userService:UserService){ }
+
+  activateSearch() {
+    this.isActive = true;
+  }
+
+  deactivateSearch() {
+    this.isActive = false;
+  }
 
   
   ngOnInit(){

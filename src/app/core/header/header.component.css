@@ -1,14 +1,15 @@
-.log:hover{
-    cursor: pointer;
-}
 
-.search-hero {
-    max-width: 500px;
-  }
 .search-container {
   display: flex;
   align-items: center;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.search-container.active {
+  width: 400px; /* Increase width when active */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  background-color: #f8f9fa; 
 }
 
 .search-icon {

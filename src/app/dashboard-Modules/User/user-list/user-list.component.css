@@ -9,14 +9,33 @@ h1{
 .user-card {
     display: flex;
     align-items: center;
+    margin:5px 0px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* the falling effect display */
+    animation: fadeInUp 0.5s ease forwards; 
+    opacity: 0; 
+    /* Hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 .user-card:hover{
     cursor: pointer;
+    /* transform: scale(1.05);  */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }  
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start position (below) */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End position (normal) */
+  }
+}
 
   .user-avatar img {
     width: 100px;

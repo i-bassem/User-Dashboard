@@ -6,8 +6,10 @@
 
   <ng-container *ngIf="userList.length>0;else notFound">
 
-    <div *ngFor="let user of userList" class="userRow" (click)="selectUser(user.id)">
-      <div class="user-card">
+    <div class="userRow" *ngFor="let user of userList; let i = index" 
+     (click)="selectUser(user.id)"
+    >
+      <div class="user-card"  [ngStyle]="{'animation-delay': (i * 0.1) + 's'}">
         <div class="user-avatar">
           <img [src]="user.avatar" alt="User Avatar">
         </div>
